@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>Validar Hexadecimal</div>
+       
+        <input type="text" id="txthexa" name="txthexa"/>       
+        <input type="button" id="btnValor" name="btnValor" value="Validar"
+               onclick="if(esHexa(document.getElementById('txthexa').value)) 
+               alert ('El numero ingresado es Hexadecimal'); 
+               else alert ('El numero ingresado no es Hexadecimal');"/> 
+    </body>
+      
+</html>
+
+
+<script>
+    function esHexa(texto){
+        var res="";
+        for(i=0;i<=texto.length-1;i++){
+            res = texto.substring(i, i+1);
+            if(res!=="1" && res!=="2" && res!=="3" && res!=="4" && res!=="5" && res!=="6" && res!=="7" && res!=="8" &&
+                    res!=="9" && res!=="a" && res!=="A" && res!=="b" && res!=="B" && res!=="c" && res!=="C" && res!=="d" && res!=="D" &&
+                    res!=="e" && res!=="E" && res!=="f" && res!=="F"){
+             return (false);
+            }
+        }
+        return (true);
+    }   
+    </script>  

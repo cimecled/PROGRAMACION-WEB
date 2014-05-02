@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TAREA HTML5 Y JAVASCRIPT</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>Validar primo</div>
+       
+        <input type="text" id="txtValor" name="txtValor"/>            
+        <input type="button" id="btnValor" name="btnValor" value="Validar"
+               onclick="if(esPrimo(document.getElementById('txtValor').value)) 
+               alert ('El numero ingresado es Primo'); 
+               else alert ('El numero ingresado no es Primo');"/> 
+        
+    </body>
+</html>
+
+<script>  
+          
+        function esPrimo(num) {  
+            var i=2;  
+            while (i*i<=num) {  
+                if (num%i == 0) return(false);  
+                    i++;  
+                }  
+            return(true);  
+            }               
+</script> 
+
+
+
