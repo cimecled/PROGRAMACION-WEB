@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+<style type="text/css">
+
+	form fieldset
+	{
+		float: left;
+		width: 30%;
+		border-color:green;
+		background-color:#FEEEDD;
+	}
+	input[type='text']
+	{
+		border-color:YELLOW;
+		width:65%;
+	}
+	.example {
+  font-size: 15px;
+  
+  color: blue;
+ }
+</style>
+
+<body bgcolor=#F6C998 >
+
+<form name="factura">
+<span class="example">
+
+<center><h1> Registro </h1></center>
+<fieldset>
+Nombre<input type="text" name="nom" id="nombre">
+<div></div>
+Apellidos<input type="text" name="ape" id="apellidos">
+
+<br><br>
+<center><input type="button" value="Registrarme" onClick="registrar('nombre')"><center>
+<br><br>
+<a href="factura.html"> <input type="button" value="factura de compra" >
+
+<form name="factura">
+<span class="example">
+</fieldset>
+<script>
+
+function registrar()
+{
+alert("usted se ha registrado con el Nombre y Apellido de: "+(document.getElementById("nombre").value)+" "+(document.getElementById("apellidos").value));
+ 
+}
+</script>
+
+</body>
+</head>
+</html>
