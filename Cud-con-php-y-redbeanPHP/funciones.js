@@ -204,3 +204,7 @@
 		}
 
 
+function cerrar()
+{
+	window.close() ;
+}

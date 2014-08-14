@@ -16,6 +16,7 @@
                 
                 $cliente = R::load('clientes', $busca);
                 //$cliente->Id= $_POST["id"];
+                $cliente->Codigo= $_POST["codigo"];
                 $cliente->Nombre= $_POST["nombre"];
                 $cliente->Cedula=$_POST["cedula"]; 
                 $cliente->Telefono=$_POST["telefono"]; 
@@ -32,6 +33,7 @@
             {
                 $cliente= R::dispense('clientes');
                 //$cliente->Id=$_POST["id"]; 
+                $cliente->Codigo= $_POST["codigo"];
                 $cliente->Nombre=$_POST["nombre"]; 
                 $cliente->Cedula=$_POST["cedula"]; 
                 $cliente->Telefono=$_POST["telefono"]; 
@@ -57,16 +59,14 @@
 		
     </head>
         <body bgcolor=#F6C998 >
-        <form name="form1">
+        <form action="capadato.php" method="post" name="form">
             <div class="example">
                 <center><h1> FACTURA TALLER EDMUNDO</h1></center>
-                
-                <div align = center >
+                    <div align = center >
                     <fieldset>
-                        <font color =#250D26/>
-                        <div class="example">
+                                      
                             <h3>
-                                Código :<input type ="text" id="textocodigo" name="id" value= "<?php if (isset($cliente->Id))  echo $cliente->Id;?>"><br>
+                                Código :<input type ="text" id="textocodigo" name="codigo" value= "<?php if (isset($cliente->Codigo))  echo $cliente->Codigo;?>"><br>
                                 Nombre del cliente :<input type ="text" id="textocliente" name="nombre" onchange="validartexto()" value= "<?php if (isset($cliente->Nombre))  echo $cliente->Nombre;?>"><br>
                                 Cedula o RUC :<input type ="text" id ="cedula" name="cedula" maxlength="13" onchange="validar_cedula_o_ruc()" value= "<?php if (isset($cliente->Cedula))  echo $cliente->Cedula;?>">
                                 Telefono :<input type ="text" id="numero" name="telefono" onchange="valida_telefono()" value="<?php if (isset($cliente->Telefono))  echo $cliente->Telefono;?>"><br>
@@ -85,42 +85,41 @@
                             <input type="text" name="CampoaSumar" id="Campo3" value="0" onblur="sumacampos('Campo3');" />
 
                             <input type="text" readonly id="MiLabelTOTAL" name="valor"/>
-                            <div></div>
+                           
                             
                             <input type="text" name="CampaSumar" id="Camp1" value="0" onblur="sumacampos2('Camp1');" />
                             <input type="text" name="detalle" id="detalle">
                             <input type="text" name="CampaSumar" id="Camp3" value="0" onblur="sumacampos2('Camp3');" />
 
                             <input type="text" id="LabelTOTAL" readonly name="valor"/>
-                            <div></div>
+                            
                             
                             <input type="text" name="CampasSumar" id="campe1" value="0" onblur="sumacampos3('campe1');" />
                             <input type="text" name="detalle" id="detalle">
                             <input type="text" name="CampasSumar" id="campe3" value="0" onblur="sumacampos3('campe3');" />
 
                             <input type="text" id="MLabelTOTAL" readonly name="valor"/>
-                            <div></div>
+                            
                             
                             <input type="text" name="CampadSumar" id="camps1" value="0" onblur="sumacampos4('camps1');" />
                             <input type="text" name="detalle" id="detalle">
                             <input type="text" name="CampadSumar" id="camps3" value="0" onblur="sumacampos4('camps3');" />
 
                             <input type="text" id="LLabelTOTAL" readonly name="valor"/>
-                            <div></div>
-                            
+                           
                             <input type="text" name="CampatSumar" id="campes1" value="0" onblur="sumacampos5('campes1');" />
                             <input type="text" name="detalle" id="detalle">
                             <input type="text" name="CampatSumar" id="campes3" value="0" onblur="sumacampos5('campes3');" />
 
                             <input type="text" id="TLabelTOTAL" readonly name="valor"/>
-                            <div></div>
+                            
                             
                             <input type="text" name="CampagSumar" id="campos1" value="0" onblur="sumacampos6('campos1');" />
                             <input type="text" name="detalle" id="detalle">
                             <input type="text" name="CampagSumar" id="campos3" value="0" onblur="sumacampos6('campos3');" />
 
                             <input type="text" id="GLabelTOTAL" readonly name="valor"/>
-                            <div></div>
+                           
 
                             <table>
                                 <tr>
@@ -136,25 +135,19 @@
                                     </td>
                                 </tr>
                             </table>
-                        </div>
-                    </fieldset>
-                </div> 
-                    <br/>
+                         <br>
                     <center>
                             <input type="text"   id="txtbusca" name="busca" value= "<?php if (isset($cliente->Id))  echo $cliente->Id;?>" >
                             <input type="submit" value="Buscar" id="buscar" name="boton">
                             <input type="submit" value="Actualizar" id="Actualizar" name="boton">
                             <input type="submit" value="Eliminar" id="Eliminar" name="boton">
                             <input type="submit" value="Agregar" id="Agregar" name="boton">
-                            <input type="submit" onClick="cerrar()" name="Submit" value="Cerrar">  </center>
-            </div>
+                            <input type="submit" onClick="cerrar()" name="Submit" value="Cerrar">  
+                    </center>
+               
+                   </fieldset>
+                   </div>
+            </div> 
         </form>
-    </body>
+        </body>
 </html>
-
-<script type="text/javascript">
-function cerrar()
-{
-	window.close() 
-}	
-</script>
